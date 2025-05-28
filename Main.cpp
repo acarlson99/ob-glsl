@@ -82,8 +82,8 @@ emacs_value obGlslRun (emacs_env* env,
     std::vector<uint8_t> flippedPixels(width * 4 * height);
     for (int y = 0; y < height; ++y) {
         memcpy(flippedPixels.data() + y * width * 4,
-                    pixels.data() + (height - 1 - y) * width * 4,
-                    width * 4);
+			   pixels.data() + (height - 1 - y) * width * 4,
+			   width * 4);
     }
 
     auto surface = SDL_CreateRGBSurfaceFrom(flippedPixels.data(), width, height,
